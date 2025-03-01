@@ -1,0 +1,3 @@
+# TextGraph
+
+GNNs đã chứng minh tiềm năng vượt trội trong nhiều nhiệm vụ xử lý ngôn ngữ tự nhiên, tuy nhiên, ứng dụng của chúng trong phân tích cảm xúc tiếng Việt vẫn chưa được khám phá sâu sắc. Nghiên cứu này đánh giá hiệu quả của các mô hình dựa trên GNNs, bao gồm TextGCN, HGAT, BertGCN và GraphSAGE, trong việc phân tích cảm xúc từ văn bản tiếng Việt. Chúng tôi thực hiện các thử nghiệm trên hai tập dữ liệu tiếng Việt UIT-VSFC và Foody.
