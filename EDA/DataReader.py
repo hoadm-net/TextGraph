@@ -32,6 +32,7 @@ class DataReader:
             self.df_train = None
             self.df_test = None
             self.df_dev = None
+            self.read_csv_file("foody_raw.csv")
 
     def read_file(self, t: str) -> pd.DataFrame:
         data_path = path.join(self.data_path_root, t)
