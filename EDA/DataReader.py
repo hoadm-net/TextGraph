@@ -4,15 +4,24 @@ from sklearn.model_selection import train_test_split
 
 from mint import get_data_path
 from string import punctuation
-from underthesea import word_tokenize
 
 
-def clean(text: str) -> str:
-    text = text.replace("\u200b", "")
-    text = text.replace("\n", "")
-    text = text.translate(str.maketrans("", "", punctuation))
-    text = text.lower()
-    return word_tokenize(text, format("text"))
+def clean(input_str: str) -> str:
+    my_punctuation = punctuation.replace('_', '')
+    output_str = input_str.translate(str.maketrans('', '', my_punctuation))
+    output_str = output_str.replace('_,', '')
+    output_str = output_str.replace('_.', '')
+    output_str = output_str.replace('…', '')
+    output_str = output_str.replace('-', '_')
+    output_str = output_str.replace('–', '_')
+    output_str = output_str.replace('\u200b_\u200b', '')
+    output_str = output_str.replace('\u200b', '')
+    output_str = output_str.replace('‘', '_')
+    output_str = output_str.replace('’', '_')
+    output_str = output_str.replace('“', '_')
+    output_str = output_str.replace('”', '_')
+    output_str = ' '.join(output_str.split())
+    return output_str.lower()
 
 
 def clean_corpus(corpus: list) -> list:
